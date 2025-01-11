@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,500;1,500;1,700;&display=swap");
+
+:root {
+  /* Primary Colors */
+  --color-light-red: hsl(0, 100%, 67%);
+  --color-orangey-yellow: hsl(39, 100%, 56%);
+  --color-green-teal: hsl(166, 100%, 37%);
+  --color-cobalt-blue: hsl(234, 85%, 45%);
+
+  /* Gradient Colors */
+  --color-light-slate-blue: hsl(252, 100%, 67%);
+  --color-light-royal-blue: hsl(241, 81%, 54%);
+  --color-violet-blue: hsla(256, 72%, 46%, 1);
+  --color-persian-blue: hsla(241, 72%, 46%, 0);
+
+  /* Neutral Colors */
+  --color-white: hsl(0, 0%, 100%);
+  --color-pale-blue: hsl(221, 100%, 96%);
+  --color-light-lavender: hsl(241, 100%, 89%);
+  --color-dark-gray-blue: hsl(224, 30%, 27%);
+
+  /* Gradients */
+  --gradient-background: linear-gradient(
+    to bottom,
+    var(--color-light-slate-blue),
+    var(--color-light-royal-blue)
+  );
+  --gradient-circle: linear-gradient(
+    to bottom,
+    var(--color-violet-blue),
+    var(--color-persian-blue)
+  );
+  /* Base Radius */
+  --base-radius: 16px;
+  --m-radius: 24px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--color-pale-blue);
+}
+
+.container {
+  width: 375px;
+  margin: auto;
+
+  @media screen and (min-width: 1024px) {
+    border-radius: var(--m-radius);
+    background-color: var(--color-white);
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.1);
+    width: 768px;
+    display: flex;
+    > * {
+      flex: 1;
+    }
+  }
+}
+
+.result {
+  color: var(--color-white);
+  background: var(--gradient-background);
+  border-radius: 0 0 25px 25px;
+  padding: 40px;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: 1024px) {
+    border-radius: var(--m-radius);
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.result-title {
+  text-align: center;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.result-score {
+  border-radius: 50%;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  background: var(--gradient-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.result-score-main {
+  color: var(--color-white);
+  font-size: 64px;
+}
+
+.result-score-total {
+  font-size: 16px;
+  color: hsla(0, 0%, 100%, 0.5);
+}
+
+.result-compliment {
+  text-align: center;
+  color: var(--color-white);
+  font-size: 24px;
+  margin: 24px 0 8px 0;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 32px;
+    margin-top: auto;
+  }
+}
+
+.result-subtitle {
+  text-align: center;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 16px;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 18px;
+    line-height: 1.2;
+    width: 250px;
+    margin: auto;
+  }
+}
+
+.summary {
+  padding: 16px;
+
+  @media screen and (min-width: 1024px) {
+    padding: 32px;
+    border-radius: 0 var(--m-radius) var(--m-radius) 0;
+  }
+}
+
+.summary-title {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+.summary-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--base-radius);
+  padding: 24px;
+  margin-bottom: 16px;
+
+  &.reaction {
+    background-color: hsla(0, 100%, 67%, 0.1);
+    color: var(--color-light-red);
+  }
+
+  &.memory {
+    background-color: hsla(39, 100%, 56%, 0.1);
+    color: var(--color-orangey-yellow);
+  }
+
+  &.verbal {
+    background-color: hsla(166, 100%, 37%, 0.1);
+    color: var(--color-green-teal);
+  }
+
+  &.visual {
+    background-color: hsla(241, 100%, 89%, 0.1);
+    color: var(--color-cobalt-blue);
+    margin-bottom: 32px;
+  }
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.summary-item-title {
+  @media screen and (min-width: 1024px) {
+    font-size: 18px;
+  }
+}
+
+.summary-item-score {
+  @media screen and (min-width: 1024px) {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-dark-gray-blue);
+  }
+}
+
+.summary-button {
+  width: 100%;
+  height: 56px;
+  border-radius: var(--base-radius);
+  border: none;
+  background-color: var(--color-dark-gray-blue);
+  color: var(--color-white);
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--gradient-background);
+  }
+}
